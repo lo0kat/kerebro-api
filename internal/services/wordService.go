@@ -30,7 +30,7 @@ func (s *WordsService) handleCreateWord(w http.ResponseWriter, r *http.Request) 
 }
 
 func (s *WordsService) handleListWords(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("GET : List words"))
+	w.Write([]byte("GET : List words ㅂㅈㄷ"))
 	log.Printf("GET /words hit")
 }
 
