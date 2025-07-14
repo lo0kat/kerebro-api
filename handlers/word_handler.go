@@ -1,10 +1,10 @@
 package handlers
 
 import(
-	"encoding/json"
-	"net/http"
-	"github.com/lo0kat/kerebro-api/models"
-	"github.com/lo0kat/kerebro-api/repository"
+    "encoding/json"
+    "net/http"
+    "github.com/lo0kat/kerebro-api/models"
+    "github.com/lo0kat/kerebro-api/repository"
 )
 
 func GetWords(w http.ResponseWriter, r *http.Request) {
