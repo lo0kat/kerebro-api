@@ -1,23 +1,24 @@
 package db
 
-import(
+import (
 	"context"
-	"github.com/jackc/pgx/v5/pgxpool"
 	"log"
 	"time"
+
+	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 var Pool *pgxpool.Pool
 
-func Connect(connectionStr string){
+func Connect(connectionStr string) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
 	var err error
-	Pool, err = pgxpool.New(ctx,connectionStr)
+	Pool, err = pgxpool.New(ctx, connectionStr)
 
 	if err != nil {
-		log.Fatalf("Unable to connect to database: %v\n, err")
+		log.Fatalf("Unable to connect to database: %v\n", err)
 	}
 
 	if err = Pool.Ping(ctx); err != nil {
